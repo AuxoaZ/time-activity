@@ -33,6 +33,11 @@ export const fmt = (s) => {
   return `${Math.floor(s / 3600)}j ${String(Math.floor((s % 3600) / 60)).padStart(2, "0")}m`;
 };
 
+export const fmtHours = (s) => {
+  const h = Math.round((Math.max(0, s) / 3600) * 10) / 10;
+  return `${h}j`;
+};
+
 function addEvent(perDay, ts, dur) {
   let t = ts;
   const end = ts + dur * 1000;
